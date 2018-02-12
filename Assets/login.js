@@ -33,7 +33,7 @@ $(document).ready(function() {
 
                     console.log("WE HAVE A MATCH ON ", familyid);
                     sessionStorage.setItem("familyid", familyid);
-                    window.location = "file:///Users/pawhalen/Documents/Full%20Stack%20Flex/CarpoolTemp/profile.html"
+                    window.location = "https://thatchcorduroy.github.io/CarpoolTemp/profile.html"
                 }
             });
         });
@@ -107,7 +107,7 @@ $(document).ready(function() {
         })
 
         sessionStorage.setItem("familyid", familyid);
-        window.location = "file:///Users/pawhalen/Documents/Full%20Stack%20Flex/CarpoolTemp/profile.html"
+        window.location = "https://thatchcorduroy.github.io/CarpoolTemp/profile.html"
 
     });
 
