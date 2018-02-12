@@ -1,0 +1,49 @@
+body {
+    background-image: url("images/dust_scratches/dust_scratches.png");
+}
+.header {
+    margin-bottom: 20px;
+}
+.banner-logo-element {
+    padding-top: 20px;
+    text-align: right;
+}
+
+.logo-element {
+    text-align: center;
+}
+.login {
+    text-align: center;
+}
+form {
+    /* display: inline-block; */
+    text-align: left;
+}
+
+.editimg {
+    height: 80px;
+    width: 75px;
+}
+
+.childdata {
+    height:34px;
+}
+
+#addchild {
+    text-align: right;
+}
+.customheadheight {
+    height: 80px;
+    display: inline-block;
+    /* text-align: left; */
+}
+
+#weather {
+    text-align: right;
+    padding-top: 20px;
+}
+
+#loginlabel, #signinlabel {
+    display:block;
+    text-align:center;
+}

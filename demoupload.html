@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="assets/style.css"> 
+    <title>CarPool Guardian - Profile</title>
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.7.1/firebase.js"></script>   
+
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo-element">
+                <img src="assets/Images/60a97309-046f-4a8b-b342-a3588e7e80bf.png">
+            </div>
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                  <ul class="nav navbar-nav">
+                    <li class="active"><a href="profile.html">Home</a></li>
+                    <li><a href="settings.html">Settings</a></li>
+                    <li><a href="teacherportal.html">Teacher Portal</a></li>
+                  </ul>
+                </div>
+              </nav>
+        </div>
+        <div class="row">
+                <div id="demo-area" class="panel panel-default">
+                    <div class="panel heading">
+                        <h3 class="panel-heading">Demo Upload:</h3>
+                    </div>
+                    <div id="demo-panel" class="panel-body">
+                        <div class=col-md-3>
+                            <input class="form-control" id="drivernumber" type="text" placeholder="Enter Driver Number">
+                            <!-- <button class="btn btn-default" id="adddriver" type="submit">Submit</button> -->
+                        </div>
+                        <div class=col-md-3>
+                            <form>
+                                <input class="btn btn-default" id="uploadbutton" type="button" value="Upload Image">
+                                <input class="btn btn-success" id="fileclick" type="file" style="display:none">
+                            </form>
+                            <img class="editimg" id="newimage" src="">
+                        </div>
+                    </div>
+                </div>
+
+                
+            
+        </div>            
+    </div>
+
+       
+
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.7.1/firebase.js"></script>    
+    <script src="assets/demo.js"></script>
+</body>
+</html>

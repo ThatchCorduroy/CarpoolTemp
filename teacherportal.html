@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+	 crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="assets/style.css">
+	<title>CarPool Guardian - Teacher Portal</title>
+	<script src="https://code.jquery.com/jquery.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/3.7.1/firebase.js"></script>
+	<script src="assets/teacher.js"></script>
+	<style>
+		.form-group {
+			display: grid;
+			grid-template-columns: 1fr;
+			/* grid-template-columns: repeat(4, 1fr); */
+		}
+
+		.panel-title {
+			text-align: center;
+		}
+
+		.test {
+			display: inline;
+			margin: 10px;
+		}
+	</style>
+
+</head>
+
+<body>
+	<div class="container">
+			<div class="header">
+				<div class="banner-logo-element">
+					<img src="assets/Images/60a97309-046f-4a8b-b342-a3588e7e80bf.png" alt="carpool guardian logo">
+				</div>  
+			</div>
+		</div>
+	</div>
+	<div class="col-md-3">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title">Departure Station/Location</h3>
+			</div>
+			<div class="panel-body">
+				<div class="form-group">
+					<label for="aurthorize-input">Teacher Assignment of Cone Location:</label>
+					<br/>
+					<select>
+						<option value="NA">Select Cone</option>
+						<option value="1">Cone 1</option>
+						<option value="2">Cone 2</option>
+						<option value="3">Cone 3</option>
+					</select>
+					<br>
+					<button type="submit" id="nextCarBtn">Next Car</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-12">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title">Approved Driver:</h3>
+			</div>
+			<div class="panel-body">
+				<div class="form-group">
+					<div class="capturedUser" id="capturePicture" style="text-align: center;"></div>
+				</div>
+			</div>
+		</div>
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title">Student(s):</h3>
+			</div>
+			<div class="panel-body">
+				<div class="form-group">
+					<div class="captureStudent" id="studentPicture" style="text-align: center;"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	
+	<script>
+
+		// // Initialize Firebase
+		// var config = {
+		// 	apiKey: "AIzaSyBgbVsxVcSiEnm0UEm1fBcW9cTZl_KUgFo",
+		// 	authDomain: "carpoolguardian.firebaseapp.com",
+		// 	databaseURL: "https://carpoolguardian.firebaseio.com",
+		// 	projectId: "carpoolguardian",
+		// 	storageBucket: "carpoolguardian.appspot.com",
+		// 	messagingSenderId: "594175940867"
+		// };
+		// firebase.initializeApp(config);
+
+		// var database = firebase.database();
+		// var driver;
+		// var div = $("<div>");
+		// var image = $("<img>");
+		// $(document).ready(function () {
+		// 	var studentArray = [];
+
+		// 	function firstLoad() {
+
+
+		// 		var cone = $("select").val();
+		// 		database.ref("cones/" + cone).once("value", function (snapshot) {
+		// 			console.log(snapshot);
+		// 			if (snapshot.exists) {
+		// 				// console.log(cone);
+		// 				var data = snapshot.val();
+		// 				driver = data.image64;
+		// 				for (var key in data.children) {
+
+		// 					var studentImage = data.children[key].image64;
+		// 					studentArray.push(studentImage);
+		// 				}
+		// 				displayStudent();
+		// 				// console.log(studentArray);
+		// 				// console.log(data);	
+		// 				// console.log(driver);
+		// 				// console.log(data.children);
+		// 				renderDriver();
+
+
+		// 			}
+		// 		})
+		// 	};
+
+
+		// 	firstLoad();
+
+		// 	$("select").on("change", function () {
+		// 		var cone = $(this).val();
+		// 		console.log(cone);
+		// 		whatEver(cone);
+
+		// 	})
+
+
+		// 	function whatEver(cone) {
+		// 		emptyDiv();
+		// 		database.ref("cones/" + cone).on("value", function (snapshot) {
+		// 			console.log(snapshot);
+		// 			if (snapshot.exists) {
+		// 				console.log(cone);
+		// 				var data = snapshot.val();
+		// 				driver = data.image64;
+		// 				for (var key in data.children) {
+
+		// 					var studentImage = data.children[key].image64;
+		// 					studentArray.push(studentImage);
+		// 				}
+		// 				// console.log(data);
+		// 				// console.log(driver);
+						
+		// 				displayStudent();
+		// 				renderDriver();
+
+		// 			}
+		// 		})
+		// 	}
+
+
+		// 	function displayStudent() {
+		// 		for (i = 0; i < studentArray.length; i++) {
+		// 			var divOne = $("<div class='test'>");
+		// 			var imageStudent = $("<img>");
+		// 			imageStudent.attr("src", "data:image/png;base64," + studentArray[i]);
+		// 			divOne.append(imageStudent);
+		// 			$("#studentPicture").append(divOne);
+
+		// 		}
+		// 	}
+
+		// 	function emptyDiv() {
+		// 		$("#studentPicture").empty();
+		// 		$("#capturePicture").empty();
+		// 		studentArray = [];
+
+		// 	};
+
+
+		// 	//grab value of selected cone
+
+
+		// 	// render the students image for teachers portal
+
+
+		// 	function renderDriver() {
+		// 		image.attr("src", "data:image/png;base64," + driver);
+		// 		div.append(image);
+		// 		$("#capturePicture").html(div);
+		// 	}
+
+		// 	// var studentOne = "assets/images/car.jpeg";
+		// 	// var studentTwo = "assets/images/car2.jpeg";
+		// 	// var studentThree = "assets/images/car3.jpeg";
+
+
+
+
+		// });
+	</script>
+
+</body>
+
+</html>
