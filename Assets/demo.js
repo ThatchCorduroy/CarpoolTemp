@@ -259,7 +259,7 @@ $(document).ready(function() {
             }).done(function(response) {
                 //the response contains a confidence level
                 var confidence = response.confidence;
-                console.log("I have a response on", tokenarr, familyid, name);
+                console.log("I have a response on", tokenarr, familyid, name, confidence);
                 
                 //if the confidence level is over 75% we assume a match and tie the stored pickup data to this driver
                 if (response.confidence > 75) {
